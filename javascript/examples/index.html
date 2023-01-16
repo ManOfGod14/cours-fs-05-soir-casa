@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Cours JavaScript</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Titre principal</h1>
+    <p id='tog'>Il est actuellement <span id='heure'></span></p>
+    <button id='bouton'>Cacher / Afficher l'heure</button>
+</body>
+
+<script>
+    window.addEventListener('load', horloge);
+        function horloge() {
+        let d = new Date();
+        document.getElementById('heure').innerHTML = d.toLocaleTimeString();
+        setTimeout(horloge, 1000);
+    }
+  
+    document.addEventListener('DOMContentLoaded', function() {
+        let cache = document.getElementById('bouton');
+        cache.addEventListener('click', cacheHorloge);
+        document.getElementById('tog').style.display = 'block';
+        function cacheHorloge() {
+            let para = document.getElementById('tog');
+            if(para.style.display == 'block'){
+                para.style.display = 'none';
+            }else{
+                para.style.display = 'block';
+            }
+        }
+    });
+</script>
+</html>

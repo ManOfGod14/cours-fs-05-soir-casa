@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap exercices</title>
+        <link href="assets/bootstrap-5.2.3-dist/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <!-- Bootstrap navbar -->
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mon logo</a>
+
+                <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#navbarTopMenu" 
+                    aria-controls="navbarTopMenu" aria-expanded="false" aria-label="Mobile menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTopMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                Accueil
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Qui sommes-nous
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" 
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Evènements</a></li>
+                                <li><a class="dropdown-item" href="#">Mediathèque</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Images/Photos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Menu désactivé</a>
+                        </li>
+                    </ul>
+                    
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-lg-3">
+                    <h1>Hello, world!</h1>
+                </div>
+                    
+                <div class="col-lg-3">
+                    <h1>Hello, world! 2</h1>
+                </div>
+
+                <div class="col-lg-3">
+                    <h1>Hello, world! 3<0h1>
+                </div>
+
+                <div class="col-lg-3">
+                    <h1>Hello, world! 4</h1>
+                </div>
+            </div> -->
+
+            <!-- <form action="" method="post">
+                <h1 class="text-center">Contactez-nous</h1>
+                <div class="row">
+                    <div class="col-lg-6 mt-3 mb-3">
+                        <label for="lastname">Nom de famille <span class="text-danger">*</span></label>
+                        <br/>
+                        <input type="text" name="lastname" placeholder="Nom de famille" class="col-lg-12"/>
+                    </div>
+
+                    <div class="col-lg-6 mt-3 mb-3">
+                        <label for="firstname">Prénom <span class="text-danger">*</span></label>
+                        <br/>
+                        <input type="text" name="firstname" placeholder="Prénom" class="col-lg-12"/>
+                    </div>
+
+                    <div class="col-lg-12 mt-3 mb-3">
+                        <label for="email">Adresse mail <span class="text-danger">*</span></label>
+                        <br/>
+                        <input type="text" name="email" placeholder="Adresse mail" class="col-lg-12"/>
+                    </div>
+
+                    <div class="col-lg-12 mt-3 mb-3">
+                        <label for="object">Object du message<span class="text-danger">*</span></label>
+                        <br/>
+                        <input type="text" name="object" placeholder="Objet du message" class="col-lg-12"/>
+                    </div>
+
+                    <div class="col-lg-12 mt-3 mb-3">
+                        <label for="message">Message <span class="text-danger">*</span></label>
+                        <br/>
+                        <textarea name="message" rows="6" placeholder="Message" class="col-lg-12"></textarea>
+                    </div>
+
+                    <div class="col-lg-12 mt-3 mb-3">
+                        <button class="btn btn-lg btn-primary w-100">
+                            Envoyer le message
+                        </button>
+                    </div>
+                </div>
+            </form> -->
+
+
+            <!-- <form action="">
+                <h1 class="text-center mt-5">Exercice bootstrap 2</h1>
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <input type="text" placeholder="1/2" class="w-100">
+                    </div>
+
+                    <div class="col-lg-3 mb-3">
+                        <input type="text" placeholder="1/2" class="w-100">
+                    </div>
+
+                    <div class="col-lg-3 mb-3">
+                        <input type="text" placeholder="1/2" class="w-100">
+                    </div>
+
+                    <div class="col-lg-8 mb-3">
+                        <input type="text" placeholder="3/5" class="w-100">
+                    </div>
+
+                    <div class="col-lg-4 mb-3">
+                        <input type="text" placeholder="2/5" class="w-100">
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <input type="text" placeholder="1/2" class="w-100">
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <input type="text" placeholder="1/2" class="w-100">
+                    </div>
+
+                    <div class="col-lg-12 text-center mb-3">
+                        <button class="btn btn-info text-white w-50">Envoyer</button>
+                    </div>
+                </div>
+            </form> -->
+
+            <form action="" method="post" class="valider-mes-champs" novalidate>
+                <h1 class="text-center mt-5 mb-3">
+                    Veuillez vous connecter
+                </h1>
+
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" required>
+                        <div class="form-text">Saisissez une adresse email valide !</div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Ce champs est requis !
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="selectNom" class="form-label">Sélectionnez un nom</label>
+                        <select class="form-select" name="nom" id="selectNom">
+                            <option selected>--- Choix du nom</option>
+                            <optgroup label="GROUP A">
+                                <option value="1">Nabil</option>
+                                <option value="2">Rahma</option>
+                                <option value="3">Karim</option>
+                                <option value="4">Mohcine</option>
+                                <option value="5">Youness</option>
+                            </optgroup>
+
+                            <optgroup label="GROUP B">
+                                <option value="1" selected>Group b 1</option>
+                                <option value="2">Group b 2</option>
+                                <option value="3">Group b 3</option>
+                                <option value="4">Group b 4</option>
+                                <option value="5">Group b 5</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="fileInput" class="form-label">Inserer une image</label>
+                        <input type="file" name="image" class="form-control" id="fileInput">
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">J'accepte les conditions d'utilisations !</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">Oui</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">Non</label>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-3">Utilisation du input group avec Bootstrap</h3 class="mt-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Identifiant">
+                    </div>
+                      
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Adresse e-mail" >
+                        <span class="input-group-text">@3wa.io</span>
+                    </div>
+                      
+                    <label for="basic-url" class="form-label">Site web de 3WA</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">https://3wa.io</span>
+                        <input type="text" class="form-control" id="basic-url">
+                    </div>
+                      
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">MAD</span>
+                        <input type="text" class="form-control">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                      
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Identifiant">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Adresse IP">
+                    </div>
+                      
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Contenu textuel</span>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <h3 class="mt-3">Utilisation du Floating avec Bootstrap</h3 class="mt-3">
+                    <div class="col-lg-6 mb-3">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-5">
+                        <button type="submit" class="btn btn-lg btn-danger w-50">Se connecter</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="card my-5">
+                <div class="card-header bg-primary">
+                    <p class="card-title text-white text-center fs-1">My card header</p>
+                </div>
+
+                <div class="card-body">
+                    <h1 class="text-center">Table des matières</h1>
+                    <div class="table-responsive mx-5 py-5">
+                        <table class="table table-striped table-bordered border-danger table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Heure</th>
+                                    <th>TP</th>
+                                    <th>Projet</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>HTML</td>
+                                    <td>5h</td>
+                                    <td>TP HTML</td>
+                                    <td>Projet HTML</td>
+                                </tr>
+
+                                <tr>
+                                    <td>CSS</td>
+                                    <td>6h</td>
+                                    <td>TP CSS</td>
+                                    <td>Projet CSS</td>
+                                </tr>
+
+                                <tr>
+                                    <td>BOOTSTRAP</td>
+                                    <td>12h</td>
+                                    <td>TP BOOTSTRAP</td>
+                                    <td>Projet BOOTSTRAP</td>
+                                </tr>
+
+                                <tr>
+                                    <td>JAVASCRIPT</td>
+                                    <td>20h</td>
+                                    <td>TP JAVASCRIPT</td>
+                                    <td>Projet JAVASCRIPT</td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Heure</th>
+                                    <th>TP</th>
+                                    <th>Projet</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <h5 class="card-title">Mon titre</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi iure cum quisquam debitis odio similique perspiciatis! Laudantium sint, officia recusandae nostrum, neque hic similique itaque commodi consectetur, est veritatis?</p>
+
+                    <p class="h1">h1. Bootstrap heading</p>
+
+                    <span class="h2">h2. Bootstrap heading</span>
+                    <br/>
+                    <small class="text-muted">With faded secondary text</small>
+
+                    <p class="lead">
+                        This is a lead paragraph. It stands out from regular paragraphs.
+                    </p>
+
+                    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                    <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+                    <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                    <p><u>This line of text will render as underlined.</u></p>
+                    <p><small>This line of text is meant to be treated as fine print.</small></p>
+                    <p><strong>This line rendered as bold text.</strong></p>
+                    <p><em>This line rendered as italicized text.</em></p>
+
+                    <div class="row py-3">
+                        <img src="assets/images/image-01.jpeg" class="col-3 img-fluid" alt="photo"/>
+
+                        <p class="col-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eaque illum ex voluptas, eligendi perferendis accusamus et autem placeat repudiandae dolorum odit! Amet inventore enim, adipisci dolorum id voluptatum facilis.</p>
+
+                        <p class="col-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eaque illum ex voluptas, eligendi perferendis accusamus et autem placeat repudiandae dolorum odit! Amet inventore enim, adipisci dolorum id voluptatum facilis.</p>
+                    </div>
+
+                    <div class="row py-3">
+                        <div class="col-lg-3 col-md-6 col-sm-12 py-1">
+                            <img src="assets/images/image-01.jpeg" class="img-thumbnail" alt="photo"/>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6 col-sm-12 py-1">
+                            <img src="assets/images/image-01.jpeg" class="img-thumbnail" alt="photo"/>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 py-1">
+                            <img src="assets/images/image-01.jpeg" class="img-thumbnail" alt="photo"/>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 py-1">
+                            <img src="assets/images/image-01.jpeg" class="img-thumbnail" alt="photo"/>
+                        </div>
+                    </div>
+
+                    <!-- <div class="py-3">
+                        <img src="assets/images/image-01.jpeg" class="rounded float-start" alt="photo"/>
+                        <img src="assets/images/image-01.jpeg" class="rounded float-end" alt="photo"/>
+                    </div> -->
+
+                    <!-- <div class="py-3 text-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ffXL1dw3Unc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div> -->
+
+
+                    <div class="py-3">
+                        <h1>Bootstrap modal</h1>
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSimple">
+                            Mon modal
+                        </button>
+
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalStatic">
+                            Modal statique
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalSimple">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <p>Mon premier pas avec bootstrap modal</p>
+                                        <input type="text" name="mal" />
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal static -->
+                        <div class="modal fade" id="modalStatic" data-bs-backdrop="static">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <p>Mon premier pas avec bootstrap modal static</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit rem asperiores ipsam nemo unde necessitatibus in totam tempore quod praesentium, sequi aliquam ratione assumenda illo incidunt corporis. Quis, nisi.</p>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button> -->
+                    
+                        <button class="btn bg-primary bg-opacity-50">
+                            .bg-primary
+                        </button>
+
+                        <div class="mt-5 bg-success p-2 text-white bg-opacity-25">
+                            This is 75% opacity success background
+                        </div>
+
+                        <h1 class="mt-5">Exercice sur les tabs</h1>
+
+                        <!-- nav tabs -->
+                        <div class="card mt-3">
+                            <div class="card-header">
+                                NAV / NAV-TABS ||| TAB-CONTENT TAB-PANE
+                            </div>
+                            <div class="card-body">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                                            Home
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                            Profile
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">
+                                            Messages
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">
+                                            Settings
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="myTab1Content">
+                                    <!-- Tab panes -->
+                                    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                        Home
+                                    </div>
+
+                                    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                        Profile
+                                    </div>
+
+                                    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">
+                                        Messages
+                                    </div>
+
+                                    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">
+                                        Settings
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- nav pills -->
+                        <div class="card mt-3">
+                            <div class="card-header">
+                                NAV / NAV-PILLS ||| TAB-CONTENT / TAB-PANE
+                            </div>
+                            <div class="card-body">
+                                <ul class="nav nav-pills nav-fill" id="myTab2" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#elementTab1" aria-selected="true">
+                                            Element 1
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#elementTab2" aria-selected="true">
+                                            Element 2
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link " type="button" role="tab" data-bs-toggle="tab" data-bs-target="#elementTab3" aria-selected="true">
+                                            Element 3
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="myTab2Content">
+                                    <div id="elementTab1" class="tab-pane fade show active" aria-labelledby="elementTab-1" role="tabpanel">
+                                        Element 1
+                                    </div>
+
+                                    <div id="elementTab2" class="tab-pane fade" aria-labelledby="elementTab-2" role="tabpanel">
+                                        Element 2
+                                    </div>
+
+                                    <div id="elementTab3" class="tab-pane fade" aria-labelledby="elementTab-3" role="tabpanel">
+                                        Element 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <p class="card-title text-center">My card footer</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="position: fixed; bottom: 30px; right: 10px; z-index: 100;">
+            <a class="text-center" target="_blank" href="https://api.whatsapp.com/send/?phone=212627895656&text=Vous pouvez nous écrire directement sur whatsapp pour plus informtations">
+                <div class="py-2" style="background: #4dc247; width: 60px; height: 60px; position: relative; cursor: pointer; transition: all 0.2s linear; border-radius: 60px; box-shadow: 7px 7px 7px rgba(3, 98, 0, 0.712);">
+                    <i class="fa fa-whatsapp" style="color: #ffffff; font-size: 44px"></i>
+                </div>
+            </a>
+        </div>
+        
+        <!-- <script src="assets/bootstrap-5.2.3-dist/js/bootstrap.js"></script> -->
+        <script src="assets/bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
+
+        <!-- <script>
+            (() => {
+                'use strict'
+
+                const forms = document.querySelectorAll('.valider-mes-champs')
+
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            })()
+        </script> -->
+
+        <!-- <script>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+            "use strict";
+            function test(){
+                let val = 3;
+                console.log('Valeur de val => '+val);
+            }
+            test();
+        </script> -->
+    </body>
+</html>
