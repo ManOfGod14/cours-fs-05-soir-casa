@@ -1,0 +1,17 @@
+img {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+}
+
+.img-1 {
+    margin: 20px;
+}
+
+.img-1 + .img-2 {
+    margin: 120px 120px;
+}
+
+.img-2 + .img-3 {
+    margin: 220px 220px;
+}

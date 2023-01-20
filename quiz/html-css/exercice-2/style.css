@@ -1,0 +1,13 @@
+div {
+    width: 70%;
+    text-align: justify;
+    border: 2px solid #404040;
+}
+
+.first-div {
+    height: 800px;
+}
+
+div > div {
+    height: 80%;
+}

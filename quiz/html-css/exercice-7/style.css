@@ -1,0 +1,8 @@
+div {
+    position: absolute;
+    top: 30%;
+    transform: rotate(90deg);
+    /* rotate: 90deg; */
+    color: green;
+    font-size: large;
+}

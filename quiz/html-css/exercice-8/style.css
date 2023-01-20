@@ -1,0 +1,5 @@
+img:hover {
+    margin: 30px;
+    transform: rotate(90deg);
+    transition-duration: 4s;
+}
