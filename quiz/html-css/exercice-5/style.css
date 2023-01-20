@@ -15,7 +15,7 @@ div {
     width: 20%;
     margin: 2px;
     padding: 2px;
-    /* background-color: rgb(129, 131, 58); */
+    background-color: rgb(129, 131, 58);
 }
 
 .deuxieme {
@@ -23,14 +23,14 @@ div {
     margin: 2px;
     padding: 2px;
     text-align: justify;
-    /* background-color: rgb(101, 213, 227); */
+    background-color: rgb(101, 213, 227);
 }
 
 .troisieme {
     width: 15%;
     margin: 2px;
     padding: 2px;
-    /* background-color: rgb(112, 165, 153); */
+    background-color: rgb(112, 165, 153);
 }
 
 .troisieme a > img {
