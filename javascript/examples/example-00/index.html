@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple 01</title>
+</head>
+
+<body>
+    <h1>Titre principal</h1>
+        <button onclick="alert('Bonjour les débutants en Javascript !')">
+            Cliquez ici
+        </button>
+        
+        <br/>
+        <br/>
+        <button onclick="(function() {
+            let elt = document.createElement('e');
+            elt.textContent = 'Element ajouté';
+            document.body.appendChild(elt);
+        })();">
+            Ajouter un élement
+        </button>
+    </body>
+</body>
+</html>

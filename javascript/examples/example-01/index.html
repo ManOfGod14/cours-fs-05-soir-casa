@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemple 01</title>
+    <title>Example 01</title>
 </head>
-
 <body>
-    <h1>Titre principal</h1>
-        <button onclick="alert('Bonjour les débutants en Javascript !')">
-            Cliquez ici
-        </button>
+    <h1>Mon premier code en JS</h1>
+
+    <script>
+        // let age = 25;
+        // let Age = 28;
+        // console.log("age : " + age);
+        // console.log("Age : " + Age);
         
-        <br/>
-        <br/>
-        <button onclick="(function() {
-            let elt = document.createElement('e');
-            elt.textContent = 'Element ajouté';
-            document.body.appendChild(elt);
-        })();">
-            Ajouter un élement
-        </button>
-    </body>
+        let prix = 15;
+        let stockPrix = prix;
+        prix = 16
+        prix = 18
+
+        let tva = 2;
+        let prixTotalTva2 = prix + tva;
+        console.log("Prix TTC avec TVA de 2dh = " + prixTotalTva2 + "dh");
+
+        let prixTTC20 = 15 + (15 * 20 / 100);
+        console.log("Prix TTC avec TVA à 20% = " + prixTTC20);
+
+        // redéclaration
+        var monVariable = 20
+        var monVariable = 26
+
+        console.log(stockPrix + monVariable);
+    </script>
 </body>
 </html>
