@@ -180,26 +180,4 @@ function minsCoins(amount) {
 }
 
 document.getElementById('minsCoinsId').innerHTML = "["+ minsCoins(138) +"]";
-
 console.log(minsCoins(138));
-
-
-
-
-
-
-
-// function minsCoins(amount) {
-//     let coins = [1, 2, 5, 10, 20];
-//     let tab = [];
-
-//     for(let i = coins.length - 1; i>=0; i--) {
-//         let val = Math.floor(amount/coins[i]);
-//         amount = amount % coins[i];
-//         tab.unshift(val);
-//     }
-
-//     return tab;
-// }
-
-// console.log(minsCoins(80))
