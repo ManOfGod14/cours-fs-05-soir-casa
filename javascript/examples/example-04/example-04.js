@@ -1,6 +1,5 @@
+//  instruction switch
 let x = 1;
-
-//  function switch
 switch(x) {
     case 1:
         document.getElementById('p1').innerHTML = "x a pour valeur 1";
@@ -61,7 +60,10 @@ do {
     zz--;
 } while(zz > 0)
 
-// fonction multiplication
+/**
+ * Les fonctions nommées
+ */
+// multiplication
 function multiplication(a, b) {
     if(typeof(a) === "number" && typeof(b) === "number") {
         return a +" * "+ b + " = " + (a * b);
@@ -71,7 +73,7 @@ function multiplication(a, b) {
 }
 document.getElementById('multiplicationId').innerHTML = multiplication(8, 11);
 
-// fonction division
+// division
 function division(a, b) {
     if(typeof(a) === "number" && typeof(b) === "number") {
         if(b == 0) {
@@ -85,7 +87,7 @@ function division(a, b) {
 }
 document.getElementById('divisionId').innerHTML = division("15", 0);
 
-// fonction somme
+// somme
 function somme(a, b) {
     if(typeof(a) === "number" && typeof(b) === "number") {
         return a +" + "+ b + " = " + (a + b);
@@ -95,7 +97,7 @@ function somme(a, b) {
 }
 document.getElementById('sommeId').innerHTML = somme(89, 11);
 
-// fonction soustraction
+// soustraction
 function soustraction(a, b) {
     if(typeof(a) === "number" && typeof(b) === "number") {
         return a +" - "+ b + " = " + (a - b);
@@ -106,10 +108,8 @@ function soustraction(a, b) {
 document.getElementById('soustractionId').innerHTML = soustraction(18, 11);
 
 /**
- * function aleatoire
+ * utilisation de la fonction prédefinie (random) de l'objet Math
  * random : genere un nombre aleatoire entre 0 et 1
- * 
- * @returns 
  */
 function aleatoire() {
     return Math.random() * 1000;
@@ -117,6 +117,7 @@ function aleatoire() {
 document.getElementById('aleatoireId').innerHTML = aleatoire();
 
 /**
+ * utilisation de la fonction prédefinie (floor) de l'objet Math
  * returner la valeur entière d'un nombre
  */
 function returnerValeurEntiere(x) {
