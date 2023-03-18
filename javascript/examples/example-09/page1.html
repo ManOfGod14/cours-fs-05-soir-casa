@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="page1.html">Page 1</a></li>
+            <li><a href="page2.html">Page 2</a></li>
+        </ul>
+
+        <button id="btnBack">Précedent (Back)</button>
+        <button id="btnForward">Suivant (Forward)</button>
+
+        <br/><br/>
+        <button id="btnGo">Aller à une page donnée en utilisant (Go)</button>
+
+        <br/><br/>
+        <button id="btnGoPrompt">Aller à une page donnée selon la valeur saisie dans promt</button>
+        <p id="msgBtnGOPrompt"></p>
+    </nav>
+
+    <h1>Page 1</h1>
+
+    <h2>L'interface et objet Window</h2>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+
+    <button id='b1'>window.open (avec fonction nommée)</button>
+    <button id='b1fa'>window.open (avec fonction anonyme)</button>
+    <button id='b1ff'>window.open (avec fonction flèchée)</button>
+
+    <br/><br/>
+    <button id='blank'>window.opn (Blank window)</button>
+    
+    <br/><br/>
+    <button id='b2'>window.resizeBy</button>
+    <button id='b3'>window.resizeTo</button>
+    
+    <br/><br/>
+    <button id='b4'>window.moveBy</button>
+    <button id='b5'>window.moveTo</button>
+    
+    <br/><br/>
+    <button id='b6'>window.scrollBy</button>
+    <button id='b7'>window.scrollTo</button>
+    
+    <br/><br/>
+    <button id='b8'>window.close</button>
+    
+    <br/><br/>
+    <button id="b9">Bonjour alert !</button>
+    
+    <br/><br/>
+    <button id="b10">Quel est ton age ?</button>
+    <p id="resAge"></p>
+
+    <br/>
+    <button id="b11">Confirmez votre age !</button>
+    <p id="resConf"></p>
+
+    <br/>
+    <button id="b12">Confirmez et saisissez votre age !</button>
+    <p id="resb12"></p>
+
+    <h2>L'interface et objet Navigator</h2>
+    <p id="navig"></p>
+    <h4>Objet Geolocation</h4>
+    <p id="lat"></p>
+    <p id="long"></p>
+    <p id="tabCoords"></p>
+    <p id="objCoords"></p>
+
+    <h2>L'interface et objet History</h2>
+    <p id="totalPage"></p>
+
+    <script src="example-09.js"></script>
+</body>
+</html>

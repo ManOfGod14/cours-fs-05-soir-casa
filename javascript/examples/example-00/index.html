@@ -9,19 +9,26 @@
 
 <body>
     <h1>Titre principal</h1>
-        <button onclick="alert('Bonjour les débutants en Javascript !')">
-            Cliquez ici
-        </button>
-        
-        <br/>
-        <br/>
-        <button onclick="(function() {
-            let elt = document.createElement('e');
-            elt.textContent = 'Element ajouté';
-            document.body.appendChild(elt);
-        })();">
-            Ajouter un élement
-        </button>
-    </body>
+    <button onclick="alert('Bonjour les débutants en Javascript !')">
+        Cliquez ici
+    </button>
+    
+    <br/>
+    <br/>
+    <button onclick="(function() {
+        let elt = document.createElement('e');
+        elt.textContent = 'Element ajouté';
+        document.body.appendChild(elt);
+    })();">Ajouter un élement</button>
+
+
+    <h1>Exemple 09 - JavaScript API, Browser Object Model (BOM) et interface Window</h1>
+
+    <h4>Objet Geolocation</h4>
+    <p id="lat"></p>
+    <p id="long"></p>
+    <p id="tabCoords"></p>
+
+    <script src="example-00.js"></script>
 </body>
 </html>
