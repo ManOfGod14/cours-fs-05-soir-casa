@@ -241,9 +241,9 @@ function fnGoPrompt() {
         msg = "Vous êtes toujours sur la même page"; // cas de 0
         
         if(btnPrompt < 0) {
-            msg = "Vous avez réculé de "+ (-btnPrompt) + "page en arrière !";
+            msg = "Vous avez réculé de "+ (-btnPrompt) + " page en arrière !";
         } else if(btnPrompt > 0) {
-            msg = "Vous avez avancé de "+ (btnPrompt) + "page en avant !";
+            msg = "Vous avez avancé de "+ (btnPrompt) + " page en avant !";
         }
 
         history.go(btnPrompt);
@@ -251,4 +251,42 @@ function fnGoPrompt() {
     
     document.getElementById('msgBtnGOPrompt').innerHTML = msg;
 }
+
+/**
+ * L'interface et l'objet Location
+ */
+console.log(location);
+
+// selection des boutons
+let reloadBtn = document.getElementById('reloadBtn');
+let assignBtn = document.getElementById('assignBtn');
+let replaceBtn = document.getElementById('replaceBtn');
+
+// definition des gestionnaires d'évènement click
+reloadBtn.addEventListener('click', actualiser);
+assignBtn.addEventListener('click', assigner);
+replaceBtn.addEventListener('click', remplacer);
+
+// creation des fonctions
+function actualiser() {
+    location.reload();
+}
+
+function assigner() {
+    location.assign("http://localhost:8082/fs-05-soir-casa/cours/javascript/examples/example-09/page1.html")
+}
+
+function remplacer() {
+    location.replace("http://localhost:8082/fs-05-soir-casa/cours/javascript/examples/example-09/page2.html")
+}
+
+/**
+ * L'interface et l'objet Screen
+ */
+console.log(screen);
+
+document.getElementById('screenInfos').innerHTML = 
+"Dimensions totales de l'écran : "+ screen.width + " * "+ screen.height +
+"<br> Surface disponible : "+ screen.availWidth + " * "+ screen.availHeight +
+"<br> La résolution de l'écran : "+ screen.pixelDepth;
 
