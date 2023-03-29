@@ -158,7 +158,7 @@ idDivParent2.insertAdjacentElement('beforeend', cloneIdDivEnfant1);
 // supprimer un noeud par son id
 // idDivEnfant1.remove();
 
-// supprimer un node enfant par id
+// supprimer un noeud enfant par id
 idDivParent1.removeChild(idDivEnfant1);
 
 // Pour vérifier si un élément possède des attributs
@@ -171,6 +171,12 @@ if(!idDivParent3.hasAttribute('style')) {
 
 let attributeList = idDivParent3.attributes;
 console.log(attributeList);
+
+// assigner un attribut à un element
+idDivParent3.setAttribute('class', 'blue bold');
+
+// supprimer un attribute
+// idDivParent3.removeAttribute('class');
 
 
 
