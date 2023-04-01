@@ -173,13 +173,82 @@ let attributeList = idDivParent3.attributes;
 console.log(attributeList);
 
 // assigner un attribut à un element
-idDivParent3.setAttribute('class', 'blue bold');
+idDivParent3.setAttribute('class', 'blue');
 
 // supprimer un attribute
-// idDivParent3.removeAttribute('class');
+idDivParent3.removeAttribute('class');
 
+// utilisation de la méthode classList
+idDivParent3.classList.add('bold', 'blue', 'taille');
+console.log(idDivParent3);
+idDivParent3.classList.remove('bold');
+console.log(idDivParent3);
+console.log(idDivParent3.classList.contains('bold'));
+console.log(idDivParent3);
+idDivParent3.classList.replace('taille', 'taille2');
+console.log(idDivParent3);
+idDivParent3.classList.toggle('taille2');
+console.log(idDivParent3);
+idDivParent3.classList.toggle('blue');
+console.log(idDivParent3);
 
+/**
+ * Gestionnaire d'évènements
+ */
+let ramadanDiv = document.querySelector("#ramadanDiv");
 
+// utilisation querySelector avec id
+let idBtnRamadan = document.querySelector('#idBtnRamadan');
+console.log(idBtnRamadan);
 
+idBtnRamadan.addEventListener('click', fnIdBtnRamadan);
 
+// function
+function fnIdBtnRamadan() {
+    alert("Ramadan karim, bienvenu ramadan ! (querySelector avec id)")
+}
 
+// // utilisation querySelector avec un nom de class
+let classBtnRamadan = document.querySelector('.classBtnRamadan');
+console.log(classBtnRamadan);
+
+classBtnRamadan.addEventListener('click', fnClassBtnRamadan);
+
+// function
+function fnClassBtnRamadan() {
+    alert("Ramadan karim, bienvenu ramadan ! (querySelector avec class name)")
+}
+
+// utilisation de onclick
+let idBtnOnclick = document.querySelector('#idBtnOnclick');
+idBtnOnclick.onclick = function () {
+    alert("Ramadan karim, bienvenu ramadan ! (querySelector avec onclick)")
+}
+
+// utilisation de onmouseover / onmouseout
+ramadanDiv.onmouseover = function () {
+    this.style.backgroundColor = "green";
+}
+
+ramadanDiv.onmouseout = function () {
+    this.style.backgroundColor = "";
+}
+
+// utilisation de addEventListener et mouseover/mouseout
+let idBtnMouseOverOut = document.querySelector("#idBtnMouseOverOut");
+
+idBtnMouseOverOut.addEventListener('mouseover', function () {
+    this.style.backgroundColor = "#4d79ff";
+});
+
+idBtnMouseOverOut.addEventListener('mouseout', function () {
+    this.style.backgroundColor = "";
+});
+
+idBtnMouseOverOut.addEventListener('click', removeClickEvent);
+function removeClickEvent() {
+    alert("Evènement de clic à supprimer !");
+}
+
+// supprimer un gestionnaire d'évènement
+idBtnMouseOverOut.removeEventListener('click', removeClickEvent);
