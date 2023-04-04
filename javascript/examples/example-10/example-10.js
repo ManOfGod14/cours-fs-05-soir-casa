@@ -40,7 +40,6 @@ for(val of classP) {
 document.body.bgColor = "#38a5c2";
 console.log(document.title);
 
-
 // getElementsByTagName
 let divElts = document.getElementsByTagName('div');
 console.log(divElts);
@@ -97,7 +96,7 @@ console.log(idDivParent1.nodeValue);
 console.log(idDivParent1.nodeType);
 
 /**
- * Ajouter, modifier ou supprimer des élements dans le DOM en JS
+ * Ajouter, modifier ou supprimer des éléments dans le DOM en JS
  */
 
 // créer un paragraphe
