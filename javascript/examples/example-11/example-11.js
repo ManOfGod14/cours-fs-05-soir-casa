@@ -1,3 +1,9 @@
+/**
+ * Gestion du délai d'éxecution en JS 
+ * setTimeout() et setInterval()
+ * clearTimeout() et clearInterval()
+ */
+
 // get setTimeout element
 let btnSetTimeout = document.querySelector("#btnSetTimeout");
 
