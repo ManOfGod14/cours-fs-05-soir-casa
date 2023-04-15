@@ -188,3 +188,58 @@ function setBgTheme() {
 bgColor.addEventListener('change', setBgTheme);
 
 
+/**
+ * indexedDB
+ */
+
+// ouverture de connexion à la base de données
+let db = "";
+let openRequest = indexedDB.open('db', 1);
+
+// mettre à jour la base de données
+openRequest.onupgradeneeded = function() {
+    db = openRequest.result;
+
+    // si l'objet de stockage n'existe pas, on le crée
+    if(!db.objectStoreNames.contains('users')) {
+        db.createObjectStore('users', {keyPath: 'id'});
+    }
+};
+
+openRequest.onerror = function() {
+    alert("Impossible d'acceder à IndexedDB !");
+};
+
+openRequest.onsuccess = function() {
+    db = openRequest.result;
+
+    let transac = db.transaction('users', 'readwrite');
+    transac.oncomplete = function() {
+        alert("Transaction terminée !");
+    }
+
+    let users = transac.objectStore('users');
+    let user1 = {
+        id: 1,
+        firstname: "Maliki",
+        lastname: "TCHEROU",
+        email: "maliki@test.com",
+        createdAt: new Date()
+    }
+
+    let ajout = users.put(user1);
+    ajout.onsuccess = function() {
+        alert("Utilisateur 1 ajouter avec succès (clé = "+ ajout.result +")");
+    }
+    ajout.onerror = function () {
+        alert("Echèc d'ajout : "+ ajout.error);
+    }
+
+    let recuperer = users.get(1);
+    recuperer.onsuccess = function() {
+        alert("Nom de l'utilisateur 1 : "+ recuperer.result.firstname +" "+recuperer.result.lastname);
+    }
+};
+
+// creation d'un objet de stockage
+

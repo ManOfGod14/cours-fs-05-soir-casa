@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Format JSON, AJAX et API FETCH en JS</title>
+</head>
+<body>
+    <h1>Format JSON, AJAX et API FETCH en JS</h1>
+    
+    <h3>JSON : JavaScript Object Notation (est un format d'échange de données léger et performant)</h3>
+    <h4>Exemple de format JSON :</h4>
+    <p id="userId"></p>
+
+    <h3>AJAX : Asynchronous JavaScript and XML</h3>
+    <p>Les technologies que AJAX exploite :</p>
+    <ul>
+        <li>JSON et XML : Extensible Markup Language : pour l'échange de donnés avec le serveur</li>
+        <li>L'objet XMLHttpRequest va nous permettre de faire la communication asynchrone</li>
+        <li>JavaScript pour afficher les données de manière dynamique et permettre à l'utilisateur d'interagir avec les nouvelles données (infotmations)</li>
+        <li>HTML et CSS pour présenter des données</li>
+    </ul>
+    <h4>Création des requêtes Ajax avec l'objet XMLHttpRequest en JS</h4>
+    <p>Les étapes à suivre pour éffectrer une requête asynchrone au serveur en utilisant l'objet XMLHttpRequest :</p>
+    <ol>
+        <li>Création de l'objet XMLHttpRequest</li>
+        <li>Initialisation de la requête, cela veut choisir le mode d'envoi des données</li>
+        <ul>
+            <li>Nous allons utiliser la méthode <b>open()</b> pour initialer la requête, cette méthode prend en argument 5 paramètres</li>
+            <li>Le 1er argument est obligatoire à savoir : (GET, POST, PUT, DELETE)</li>
+            <li>Le deuxième aussi est obligatoire à savoir : c'est l'url de destination de la requête</li>
+        </ul>
+        <li>Envoie de la requête</li>
+        <ul>
+            <li>Lors de l'envoi de la requête il faut spécifier quel genre de type de reponse on attend du serveur à savoir :</li>
+            <ul>
+                <li><b>""</b> : chaîne de caractère vide (valeur par défaut)</li>
+                <li><b>text</b> : demande au serveur de renvoyer sa réponse sous forme de caractères</li>
+                <li><b>arraybuffer</b> : demande au serveur de renvoyer sa réponse sous forme d'objet ArrayBuffer</li>
+                <li><b>blod</b> : demande au serveur de renvoyer sa réponse sous forme d'objet blod</li>
+                <li><b>document</b> : demande au serveur de renvoyer sa réponse sous forme  de document XML</li>
+                <li><b>json</b> : demande au serveur de renvoyer sa réponse sous forme d'un format JSON</li>
+            </ul>
+        </ul>
+        <li>Création du gestionnaire d'évènements pour prendre en charge la réponse du serveur à savoir :</li>
+        <ul>
+            <li>l'évènement <b>load</b> : qui se déclenche lorsque la requête a bien été exécuté (result prêt) pour savoir si notre requête a bien aboutit ou pas, nous allons tester le statut HTTP à savoir :</li>
+            <ul>
+                <li><b>le statut 100 (continue)</b> : tout fonctionne bien jusqu'à présent</li>
+                <li><b>le statut 200 (OK)</b> : tout s'est bien passé (requête exécuté avec succès)</li>
+                <li><b>le statut 301 (Moved Permanently)</b> :  Identifiant de ressource unique (URI) relatif à la ressource demandée a changé de localisation de façon permanent</li>
+                <li><b>le statut 302 (Found)</b> : Identifiant de ressource unique (URI) relatif à la ressource demandée a changé de locatlisation temporaire</li>
+                <li><b>le statut 304 (Not Modified)</b> : Indique au client que la réponse n'a pas été modifiée depuis le dernier accès et qu'il peut utilisé la version en cache</li>
+                <li><b>le statut 401 (Unauthorized)</b> : Indique que e client n'a pas été identifier</li>
+                <li><b>le statut 403 (Forbiden)</b> : Indique que le client n'a  pas l'autorisation d'acceder à ce contenu</li>
+                <li><b>le statut 404 (Not Found)</b> : Le serveur n'a pas pu trouver la ressource deamandée</li>
+                <li><b>le statut 500 (Internal Server Error)</b> : Le serveur a rencontré une situation inattendue</li>
+            </ul>
+            <li>l'évènement <b>error</b> : qui se déclenche lorsque la requête n'a pas aboutit</li>
+            <li>l'évènement <b>progress</b> : qui se déclenche à intervalles réguliers et va nous permettre de savoir l'état d'avancement de la requête</li>
+        </ul>
+    </ol>
+    <p id="pId1"></p>
+    <p id="pId2"></p>
+
+    <h3>Utilisation de l'API Fetch</h3>
+    <p>L'API Fetch nous fournit 3 interfaces : <b>Request, Response et Headers</b> et nous permet d'implémenter le mixin Body qu'on pourra utiliser dans nos requêtes</p>
+    <p>La méthode fetch() prend en argument obligatoire le chemin de la resource que l'on souhaite récuperer</p>
+    <p>Pour récuperer le corps de la réponse nous allons utiliser les méhodes de l'interface <b>Reponse</b> en fonction du format qu'on veut à savoir :</p>
+    <ul>
+        <li>La méthode <b>text()</b> : retourne la réponse sous forme de chaîne de caractère </li>
+        <li>La méthode <b>json()</b> : retourne la réponse en tant qu'objet JSON (sous forme de format JSON)</li>
+        <li>La méthode <b>formData()</b> : retourne la réponse en tant qu'objet FormData</li>
+        <li>La méthode <b>arrayBuffer()</b> : retourne la réponse en tant qu'objet ArrayBuffer</li>
+        <li>La méthode <b>blod()</b> : retourne la réponse en tant qu'objet Blod</li>
+    </ul>
+    <p id="pId3"></p>
+    <p id="pId4"></p>
+
+    <script src="example-12.js"></script>
+</body>
+</html>

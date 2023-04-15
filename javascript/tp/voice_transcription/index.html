@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription vocal</title>
+
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+</head>
+<body>
+    <div class="container text-md-center py-5">
+        <h1>TP Transcription vocal en JS</h1>
+        <p class="fs-2">Utilisation de l'API webkitSpeechRecognition</p>
+
+        <div class="mb-5">
+            <label for="transcritpion">Zone de texte de la voix transcrite</label>
+            <textarea id="transcritpion" cols="30" rows="10" class="form-control" disabled></textarea>
+        </div>
+        
+    
+        <button id="startId" class="btn btn-outline-success w-25">Enregistrer</button>
+        <button id="stopId" class="btn btn-outline-danger w-25" disabled>Arrêter</button>
+    </div>
+    
+    <script src="assets/voice.js"></script>
+</body>
+</html>

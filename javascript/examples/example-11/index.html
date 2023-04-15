@@ -36,7 +36,15 @@
         <li>Opération terminée avec échec (promesse rejetée)</li>
     </ul>
     
-    <h2>Stockage de données dans le navigateur</h2>
+    <h2>Stockage de données dans le navigateur (cookie, sessionStorage, localStorage et indexedDB)</h2>
+    <p>En pratique pour exploiter indexedDB, on va suivre les étapes suivantes :</p>
+    <ul>
+        <li>Ouvrir une connexion à la base de données</li>
+        <li>Créer un objet de stockage</li>
+        <li>Initier une transaction</li>
+        <li>Effectuer des requêtes</li>
+        <li>Créer des gestionnaires d'évènements liés au resultat de nos requêtes</li>
+    </ul>
     <form action="">
         <div>
             <label for="bgTheme">Saisissez un thème de coleur (Hexa) :</label>
@@ -45,7 +53,12 @@
     </form>
 
     <h2>Les modules JS (import et export)</h2>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
 
     <script src="example-11.js"></script>
+    
+    <script type="module" src="script.js"></script>
 </body>
 </html>
