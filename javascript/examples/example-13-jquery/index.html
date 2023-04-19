@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La bibliothèque jQuery</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <h1>La bibliothèque jQuery</h1>
+
+    <h2>Introduction au jQuery</h2>
+    <p>jQuery est une librairie/bibliothèque Javascript, son rôle est de nous simplifier l'utilisation du language Javascript.</p>
+    
+    <h3>Exemple simple d'utilisation du jQuery</h3>
+    <button id="btnId1">Cliquez pour cacher !</button>
+
+    <h3>La syntaxe du jQuery</h3>
+    <p>Pour accéder aux défferents méthodes et propriétés de la bibliothèque jQuery, nous allons utiliser les alias suivant : <b>jQuery()</b> ou <b>$()</b> </p>
+
+    <p>De manière générale nos requêtes en jQuery va ressembler à : <b>$(selecteur).action()</b>, la partie <b>$(selecteur)</b> : nous renvoie l'objet/element sur lequel on va appliquer la méthode <b>action()</b></p>
+
+    <h2>Manipulation du DOM avec jQuery</h2>
+    <h3>La méthode jQuery <span class="souligner">has()</span></h3>
+    <p>La méthode <span><b>has()</b></span> du jQuery, nous permet d'affiner la sélection en ne sélectionnant que les éléments d'une sélection initiale qui possèdent des éléments enfants correspondant au sléecteur passé en argument de cette fonction</p>
+
+    <h3>La méthode jQuery <span class="souligner">filter()</span></h3>
+    <p>La méthode <b>filter()</b> du jQuery, nous permet d’affiner une sélection en ne sélectionnant que les éléments qui satisfont au sélecteur passé en argument de cette fonction.</p>
+
+    <h3>La méthode jQuery <span class="souligner">not()</span></h3>
+    <p>La méthode <b>not()</b>, nous permet de soustraire d'une sélection de départ des éléments qui correspondent à un critère donné</p>
+
+    <h3>Les méthodes jQuery <span class="souligner">first(), last() et eq()</span></h3>
+    <p>Les méthodes <b>first()</b> et <b>last()</b>, nous permettra d'affiner une sélection en ne électionnant respectivement que le premier et le dernier élément de la sélection du départ</p>
+
+    <p>La méthode <b>eq()</b>, va nous permettre de sélectionner q'un élément dans une sélection de départ en fonction de sa place/position dans cette sélection</p>
+
+    <h3>Déplacement dans le DOM avec jQuery</h3>
+    <div class="container">
+        <div id="firstChildId">
+            <div>
+                <p>Les méthodes pemettant de remonter le DOM</p>
+                <ul id="firstUlId">
+                    <li>parent()</li>
+                    <li>parents()</li>
+                    <li class="li-color">parentsUntil()</li>
+                    <li class="li-color">closest()</li>
+                </ul>
+        
+                <p>Les méthodes permettant de déscendre le DOM</p>
+                <ul id="secondUlId">
+                    <li class="li-color">children()</li>
+                    <li>find()</li>
+                </ul>
+            </div>
+        </div>
+
+        <h5>Children test 1</h5>
+
+        <div>
+            <h5>Children test 2</h5>
+        </div>
+
+        <h5 id="idH5">Children test 3</h5>
+    </div>
+
+    <h3>Manipulation du DOM avec les méthodes de type getter et setter en jQuery</h3>
+    <p>Quelques méthodes utiles : html(), text(), attr(), prop(), val(), css(), height(), innerHeight(), outerHeight(), width(), offset(), srcollLeft(), scrollTop(), clone(), append(), appendTo(), prepend(), prependTo(), before(), after(), remove(), detach(), empty(), replaceAll(), replaceWith()</p>
+    <div>
+        <input type="text" name="firstname" id="firstname" value="Maliki">
+        <input type="text" name="lastname" id="lastname" value="TCHEROU">
+
+        <a href="#" id="monLien">Mon lien</a>
+    </div>
+
+    <h2>Gestion des évènements avec jQuery</h2>
+    <p>Quelques méthodes pour simplifier la gestion des évènement en utilisant jQuery : click(), mouseenter(), keyup(), change()</p>
+    <div id="eventDivId1" class="contour">
+        <h3>Contenu div 1, Cliquez moi pour afficher plus de contenu : méthodes show(), hide() et dblclick()</h3>
+        <p id="eventPId1" class="afficher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente animi assumenda iste enim optio, est mollitia alias iusto, nisi quae saepe nemo quod accusantium distinctio libero, laboriosam magnam rerum.</p>
+    </div>
+
+    <div id="eventDivId2" class="contour">
+        <h3>Contenu div 2, utilisation des méthodes mouseenter() et mouseleave()</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis autem consequuntur quia laudantium necessitatibus quam repellat vel reprehenderit, a sint, consectetur harum dicta minus? Ea eos voluptates suscipit repellendus odio?</p>
+    </div>
+
+    <div id="eventDivId3" class="contour">
+        <h3>Contenu div 3, utilisation de la méthode hover()</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci eaque libero quibusdam dolor fuga quia voluptate sint quos reiciendis iusto deleniti assumenda pariatur, labore minus eius. Eius saepe officia corrupti.</p>
+    </div>
+
+    <div id="eventDivId4" class="contour">
+        <h3>Contenu div 4, utilisation des méthodes mousedown() et mouseup()</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptate illo omnis, non enim laborum facere, fugit debitis ut recusandae quo placeat blanditiis! Perspiciatis voluptatibus inventore amet rem id totam!</p>
+    </div>
+
+    <h2>Creation des éffets/animations avec jQuery</h2>
+
+    <h2>Ajax jQuery</h2>
+
+    <script src="assets/jquery-3.6.4.min.js"></script>
+    <script src="assets/example-13.js"></script>
+</body>
+</html>

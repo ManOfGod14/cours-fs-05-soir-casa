@@ -1,0 +1,22 @@
+.souligner {
+    text-decoration: underline;
+}
+
+.container, div {
+    margin: 20px;
+    padding: 20px;
+}
+
+.li-color {
+    color: white;
+}
+
+.contour {
+    border: 1px solid #404040;
+    border-radius: 10px;
+}
+
+.contour h3, .contour p {
+    margin: 0px;
+    padding: 6px;
+}
