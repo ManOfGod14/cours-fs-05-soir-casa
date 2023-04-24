@@ -122,7 +122,7 @@ $(document).ready(() => {
 
     // méthode dblclick (pour écouter un évènement de double clic)
     $("#eventDivId1").dblclick(function() {
-        $(this).css("background-color", "#4d79ff");
+        $(this).css("background-color", "#00264d");
     });
 
     // méthode mouseenter (pour écouter un évènement de passage de souris)
@@ -137,9 +137,42 @@ $(document).ready(() => {
 
     // méthode hover (pour écouter un évènement en éffectuant un éffet hover)
     $("#eventDivId3").hover(
-        function() { $(this).css("background-color", "#4d79ff"); }, 
+        function() { $(this).css("background-color", "#85e085"); }, 
         function() { $(this).css("background-color", ""); }
     );
 
+    // méthode mousedown (pour écouter l'évènement de clic et du maintien de la souris)
+    $("#eventDivId4").mousedown(function() {
+        $(this).css("background-color", "#ff80bf");
+    });
+
+    // méthode mouseup (pour écouter l'évènement de délaissement  de la souris)
+    $("#eventDivId4").mouseup(function() {
+        $(this).css("background-color", "");
+    });
+
+    // méthode mousemove (pour écouter l'évènement du déplacement de la souris en récupérant les coordonnées de sa position)
+    $("body").mousemove(function(evt) {
+        // console.log(evt);
+        let pageCoords = "(" + evt.pageX + ", " + evt.pageY + ")";
+        $("#mousemoveId").find("span").text(pageCoords);
+    });
+
+    // keydown() affiche le code la dernière touche pressée
+    $("#eventDivId6").first("div").find("#inputText1").keydown(function(evt) {
+        // console.log($(this));
+        $(this).css("background-color", "#006666");
+        $("#spanTextId1").text(evt.which);
+    });
+
     //
+    $("#inputText1").keypress(function(evt) {
+        $("#spanTextId11").text(evt.which);
+    });
+
+    // keyup() écouter l'évènement de touche d'un bouton du clavier
+    $("#inputText2").keyup(function() {
+        $(this).css("background-color", "#ffd9b3");
+    });
+
 });
