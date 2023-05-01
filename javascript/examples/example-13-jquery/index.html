@@ -117,8 +117,64 @@
         </div>
     </div>
 
-    <h2>Creation des éffets/animations avec jQuery</h2>
+    <div id="eventDivId7" class="contour">
+        <h3>Contenu div 7, utilisation des méthodes focus(), focusin(), focusout() et blur()</h3>
+        <div>
+            <label for="inputText3">Votre nom :</label>
+            <input type="text" name="nom" id="inputText3">
+        </div>
+        <div>
+            <label for="inputText4">Votre prénom :</label>
+            <input type="text" name="prenom" id="inputText4">
+        </div>
+        <div>
+            <label for="inputText5">Email :</label>
+            <input type="text" name="email" id="inputText5">
+        </div>
+    </div>
 
+    <div id="eventDivId8" class="contour">
+        <h3>Contenu div 8, utilisation des méthodes change() et submit()</h3>
+        <form>
+            <div>
+                <label for="inputText6">Votre nom :</label>
+                <input type="text" name="nom" id="inputText6">
+            </div>
+            <div>
+                <label for="inputText7">Votre pays :</label>
+                <select name="pays" id="inputText7">
+                    <option value="">--- séectionnez un pays ---</option>
+                    <option value="Maroc">Maroc</option>
+                    <option value="Togo">Togo</option>
+                    <option value="France">France</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Etats Unis">Etats Unis</option>
+                </select>
+                <p>Valeur du pays sélectionné : <span id="selectSpanId"></span></p>
+            </div>
+    
+            <div>
+                <button type="submit">Envoyer vos informations</button>
+            </div>
+        </form>
+    </div>
+
+    <h2>Creation des éffets/animations avec jQuery</h2>
+    <p>Quelques méthodes utiles : fadeOut(), fadeIn(), fadeTo() et fadeToggle()</p>
+    <img src="//unsplash.it/600/300" alt="" id="animationImgId1">
+    <br><br>
+    <button id="fadeOutBtnId">fadeOut()</button>
+    <button id="fadeInBtnId">fadeIn()</button>
+    <button id="fadeToBtnId">fadeTo()</button>
+    <button id="fadeToggleBtnId">fadeToggle()</button>
+
+    <p>Autres méthodes utiles : slideDown(), slideUp(), slideToggle()</p>
+    <img src="//unsplash.it/800/400" alt="" id="animationImgId2">
+    <br><br>
+    <button id="slideDownBtnId">slideDown()</button>
+    <button id="slideUpBtnId">slideUp()</button>
+    <button id="slideToggleBtnId">slideToggle()</button>
+    
     <h2>Ajax jQuery</h2>
 
     <script src="assets/jquery-3.6.4.min.js"></script>

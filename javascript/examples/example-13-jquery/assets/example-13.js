@@ -175,4 +175,68 @@ $(document).ready(() => {
         $(this).css("background-color", "#ffd9b3");
     });
 
+    // focus : s'exécute lorqu'on a le focus
+    $("#eventDivId7").find("input").focus(function() {
+        $(this).css("background-color", "#ff80bf");
+    });
+
+    // focusin
+    $("#eventDivId7").focusin(function() {
+        $(this).find("label").css("background-color", "yellow");
+    });
+
+    // blur/focusout : écoute l'évènement de perte du focus
+    $("#eventDivId7").find("input").blur(function() {
+        $(this).css("background-color", "");
+    });
+
+    // change : 
+    $("#eventDivId8").find('select').change(function() {
+        $("#selectSpanId").text($(this).val());
+    });
+
+    // submit
+    $('form').submit(function() {
+        alert("Vos information ont été envoyé avec succès !");
+    });
 });
+
+/**
+ * Animation en jQuery
+ */
+$(document).ready(() => {
+    // fadeOut : permet de faire disparaitre ou cacher l'élément ciblé
+    $("#fadeOutBtnId").click(function() {
+        $("#animationImgId1").fadeOut();
+    });
+
+    // fadeIn : permet de faire apparaitre ou rendre visible l'élément ciblé
+    $("#fadeInBtnId").click(function() {
+        $("#animationImgId1").fadeIn(2000);
+    });
+
+    // fadeToggle : permet de faire apparaitre ou disparaitre l'élément ciblé
+    $("#fadeToggleBtnId").click(function() {
+        $("#animationImgId1").fadeToggle();
+    });
+
+    // fadeTo : permet de rendre flou l'élément ciblé à un certain niveau d'opacité
+    $("#fadeToBtnId").click(function() {
+        $("#animationImgId1").fadeTo(2000, 0.3);
+    });
+
+    // slideDown
+    $("#slideDownBtnId").click(function() {
+        $("#animationImgId2").slideDown(2000);
+    });
+
+    // slideUp
+    $("#slideUpBtnId").click(function() {
+        $("#animationImgId2").slideUp(2000);
+    });
+
+    // slideToggle
+    $("#slideToggleBtnId").click(function() {
+        $("#animationImgId2").slideToggle(2000);
+    });
+})

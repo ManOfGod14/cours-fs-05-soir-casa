@@ -20,3 +20,8 @@
     margin: 0px;
     padding: 6px;
 }
+
+label {
+    min-width: 20%;
+    display: inline-block;
+}
