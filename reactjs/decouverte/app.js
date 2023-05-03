@@ -153,7 +153,7 @@ class IncrementationToggleBtn extends React.Component {
     static defaultProps = {
         debut: 0,
         pas: 1,
-        btnColor: "btn btn-primary"
+        hasBtn: false
     }
 
     constructor(props) {
@@ -162,10 +162,13 @@ class IncrementationToggleBtn extends React.Component {
             valeur: props.debut,
             compteur: null
         }
+
+        this.btnToggle = this.btnToggle.bind(this)
+        this.btnReset = this.btnReset.bind(this)
     }
 
     componentDidMount() {
-
+        this.btnStart()
     }
 
     componentWillUnmount() {
@@ -178,10 +181,56 @@ class IncrementationToggleBtn extends React.Component {
         })
     }
 
+    btnStart() {
+        window.clearInterval(this.state.compteur)
+        this.setState({
+            compteur: window.setInterval(this.incrementer.bind(this), 1000)
+        })
+    }
+
+    btnStop() {
+        window.clearInterval(this.state.compteur)
+        this.setState({
+            compteur: null
+        })
+    }
+
+    btnToggle() {
+        return this.state.compteur ? this.btnStop() : this.btnStart()
+    }
+
+    btnLabel() {
+        return this.state.compteur ? <span>Stop</span> : <span>Start</span>
+    }
+
+    btnReset() {
+        this.setState((state, props) => {
+            return {valeur: props.debut}
+        })
+    }
+
+    btnBgColor() {
+        return this.state.compteur ? "btn btn-danger" : "btn btn-success"
+    }
+
     render() {
         return <div>
             <span>Incrementation : {this.state.valeur}</span>
-            <button>Stop</button>
+            {
+                (this.props.hasBtn)
+                ?
+                <React.Fragment>
+                    <span> </span>
+                    <button className={this.btnBgColor()} onClick={this.btnToggle}>
+                        {this.btnLabel()}
+                    </button>
+                    <button className={"btn btn-warning ms-2"} onClick={this.btnReset}>
+                        Reset
+                    </button>
+                </React.Fragment>
+                :
+                ''
+            }
         </div>
     }
 }
@@ -208,6 +257,8 @@ function MyHomePage() {
             <br />
             <h3>Gestion des évènements</h3>
             <IncrementationManuel debut={1000} pas={100} btnColor="btn btn-primary btn-sm" />
+            <br />
+            <IncrementationToggleBtn debut={10000} pas={1000} hasBtn={true} />
         </div>
     </React.Fragment>
 }
