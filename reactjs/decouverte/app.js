@@ -305,7 +305,7 @@ class FormulaireTest1 extends React.Component {
                 </div>
 
                 <div className={"form-group mb-3"}>
-                    <label htmlFor="country" className="form-label">Adresse e-mail :</label>
+                    <label htmlFor="country" className="form-label">Votre pays :</label>
                     <select name="country" id="country" 
                         className="form-select"
                         onChange={this.handleChange}
