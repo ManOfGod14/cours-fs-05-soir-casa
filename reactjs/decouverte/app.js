@@ -235,12 +235,124 @@ class IncrementationToggleBtn extends React.Component {
     }
 }
 
+/**
+ * les formulaires avec react
+ */
+
+// formulaire controlé par React
+class FormulaireTest1 extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            firstname: "Maliki",
+            lastname: "",
+            email: "",
+            country: "",
+            message: "",
+            cgu: false,
+        }
+
+        this.handleSingleChange = this.handleSingleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    // méthode permettant de modifier un seul champ
+    handleSingleChange(e) {
+        // console.log(e)
+        this.setState({firstname: e.target.value})
+    }
+
+    // méthode permettant de modifier tous les champs d'une manière dynamique
+    handleChange(e) {
+        const fieldName = e.target.name
+        const fieldType = e.target.type
+
+        this.setState({
+            [fieldName]: (fieldType === 'checkbox') ? e.target.checked : e.target.value
+        })
+
+    }
+
+    render() {
+        return <React.Fragment>
+            <form>
+                <div className={"form-group mb-3"}>
+                    <label htmlFor="firstname" className="form-label">Prénom :</label>
+                    <input type="text" name="firstname" id="firstname" 
+                        className="form-control"
+                        // defaultValue="Maliki" : je veux le controler mais par défaut je veux une valeur
+                        value={this.state.firstname}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div className={"form-group mb-3"}>
+                    <label htmlFor="lastname" className="form-label">Nom de famille :</label>
+                    <input type="text" name="lastname" id="lastname" 
+                        className="form-control"
+                        value={this.state.lastname}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div className={"form-group mb-3"}>
+                    <label htmlFor="email" className="form-label">Adresse e-mail :</label>
+                    <input type="email" name="email" id="email" 
+                        className="form-control"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                    />
+                </div>
+
+                <div className={"form-group mb-3"}>
+                    <label htmlFor="country" className="form-label">Adresse e-mail :</label>
+                    <select name="country" id="country" 
+                        className="form-select"
+                        onChange={this.handleChange}
+                    >
+                        <option value="">-- Sélectionnez le pays --</option>
+                        <option value="1">Togo</option>
+                        <option value="2">Maroc</option>
+                        <option value="3">France</option>
+                        <option value="4">Canada</option>
+                        <option value="5">USA</option>
+                    </select>
+                </div>
+
+                <div className={"form-group mb-3"}>
+                    <label htmlFor="message" className="form-label">Message :</label>
+                    <textarea name="message" id="message" 
+                        className="form-control"
+                        value={this.state.message}
+                        onChange={this.handleChange}
+                    ></textarea>
+                </div>
+
+                <div className={"form-check mb-3"}>
+                    <input type="checkbox" name="cgu" id="cgu" 
+                        className="form-check-input"
+                        checked={this.state.cgu}
+                        onChange={this.handleChange}
+                    />
+                    <label htmlFor="cgu" className="form-check-label">
+                        Condition générale d'utilisation
+                    </label>
+                </div>
+
+
+                <div className="mb-3">
+                    {JSON.stringify(this.state)}
+                </div>
+            </form>
+        </React.Fragment>
+    }
+}
+
 // composant assembleur
 function MyHomePage() {
     return <React.Fragment>
         <div className={"container py-5"}>
             <h1>Création des composants simple avec React</h1>
-
             <Salutation name="Maliki" />
             <Salutation name="Youness" />
             <Salutation name="Nabil" />
@@ -259,12 +371,20 @@ function MyHomePage() {
             <IncrementationManuel debut={1000} pas={100} btnColor="btn btn-primary btn-sm" />
             <br />
             <IncrementationToggleBtn debut={10000} pas={1000} hasBtn={true} />
+
+            <br />
+            <h3>Gestion des formulaires avec react</h3>
+            <FormulaireTest1 />
+
         </div>
     </React.Fragment>
 }
 
 // le document final (DOM)
-ReactDOM.render(
-    <MyHomePage />,
-    document.querySelector("#app")
-)
+const root = ReactDOM.createRoot(document.querySelector("#app"))
+root.render(<MyHomePage />)
+
+// ReactDOM.render(
+//     <MyHomePage />,
+//     document.querySelector("#app")
+// )
