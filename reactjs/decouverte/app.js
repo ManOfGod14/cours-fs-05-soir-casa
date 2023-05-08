@@ -1,6 +1,16 @@
 /**
  * les composants
  */
+
+// liste des pays
+const COUNTRIES = [
+    {id: 1, name: "Togo", phoneCode: "228"},
+    {id: 2, name: "Maroc", phoneCode: "212"},
+    {id: 3, name: "France", phoneCode: "33"},
+    {id: 4, name: "Canada", phoneCode: "1"},
+    {id: 5, name: "USA", phoneCode: "1"}
+]
+
 // création d'un composant en utilisant une fonction
 function ComposantFn({name, children}) {
     return <div>
@@ -238,7 +248,6 @@ class IncrementationToggleBtn extends React.Component {
 /**
  * les formulaires avec react
  */
-
 // formulaire controlé par React
 class FormulaireTest1 extends React.Component {
     constructor(props) {
@@ -348,6 +357,194 @@ class FormulaireTest1 extends React.Component {
     }
 }
 
+// composant fonctionnel d'un champ input
+function InputField({name, type, value, onChange, children}) {
+    return <div className={"form-group mb-3"}>
+        <label htmlFor={name} className="form-label">
+            {children}
+        </label>
+        <input type={type} name={name} id={name} 
+            className="form-control"
+            value={value}
+            onChange={onChange}
+        />
+    </div>
+}
+
+// composant de classe d'un champ input
+class InputField2 extends React.Component {
+    render() {
+        const {name, type, value, onChange, label} = this.props
+        
+        return <div className={"form-group mb-3"}>
+            <label htmlFor={name} className="form-label">
+                {label}
+            </label>
+            <input type={type} name={name} id={name} 
+                className="form-control"
+                value={value}
+                onChange={onChange}
+            />
+        </div>
+    }
+}
+
+// composant fonctionnel d'un champ checkbox
+function CheckboxField({name, checked, onChange, label}) {
+    return <div className={"form-check mb-3"}>
+        <input type="checkbox" name={name} id={name} 
+            className="form-check-input"
+            checked={checked}
+            onChange={onChange}
+        />
+        <label htmlFor={name} className="form-check-label">
+            {label}
+        </label>
+    </div>
+}
+
+//
+function SelectField({name, onChange, label, defaultOption, dataOptions}) {
+    const htmlDefaultOption = (defaultOption) ? 
+    <option value="">{defaultOption}</option> : ''
+
+    return <div className={"form-group mb-3"}>
+        <label htmlFor={name} className="form-label">
+            {label}
+        </label>
+        <select name={name} id={name} 
+            className="form-select"
+            onChange={onChange}
+        >
+            {htmlDefaultOption}
+
+            {
+                dataOptions.map((item, index) => {
+                    return <option key={"opt_"+index} value={item.id}>{item.name + " (+" +item.phoneCode+ ")"}</option>
+                })
+            }
+        </select>
+    </div>
+}
+
+class FormulaireTest2 extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            firstname: "",
+            lastname: "",
+            email: "",
+            country: "",
+            message: "",
+            cgu: false,
+        }
+
+        this.handleChange = this.handleChange.bind(this)
+        this.handelSubmit = this.handelSubmit.bind(this)
+    }
+
+    handleChange(e) {
+        const fieldName = e.target.name
+        const fieldType = e.target.type
+
+        this.setState({
+            [fieldName]: (fieldType === 'checkbox') ? e.target.checked : e.target.value
+        })
+    }
+
+    handelSubmit(e) {
+        e.preventDefault()
+        const data = JSON.stringify(this.state)
+        this.setState({
+            firstname: "",
+            lastname: "",
+            email: "",
+            country: "",
+            message: "",
+            cgu: false,
+        })
+        console.log(data)
+    }
+
+    render() {
+        return <React.Fragment>
+            <form onSubmit={this.handelSubmit}>
+                <InputField name={"firstname"}
+                    value={this.state.firstname}
+                    onChange={this.handleChange}
+                >Prénom :</InputField>
+
+                <InputField2 name={"lastname"}
+                    type={"text"}
+                    value={this.state.lastname}
+                    onChange={this.handleChange}
+                    label={"Nom de famille :"}
+                />
+
+                <InputField2 name={"email"}
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    label={"Adresse e-mail :"}
+                />
+
+                <SelectField name={"country"}
+                    label={"Votre pays :"}
+                    onChange={this.handleChange}
+                    defaultOption={"-- Sélectionnez un pays --"}
+                    dataOptions={COUNTRIES}
+                />
+
+                <CheckboxField name="cgu"
+                    checked={this.state.cgu}
+                    label={"Condition générale d'utilisation"}
+                    onChange={this.handleChange}
+                />
+                
+                <div className="mb-3">
+                    {/* <button className="btn btn-primary">
+                        Envoyer
+                    </button> */}
+
+                    <ColumnTwoRow
+                        left={<Button type={"primary"} size={"sm"}>Envoyer</Button>}
+                        right={<Button type={"danger"} size={"sm"}>Supprimer</Button>}
+                    />
+                </div>
+
+                <div className="mb-3">
+                    {JSON.stringify(this.state)}
+                </div>
+            </form>
+        </React.Fragment>
+    }
+}
+
+/***
+ * la composition des composant vs Héritage des composant
+ */
+function Button({type, size, children}) {
+    const typeClass = (type) ? " btn-"+ type : "btn-secondary"
+    const sizeClass = (size) ? "btn-"+ size : "btn-md"
+    const className = "btn "+ typeClass +" "+ sizeClass
+
+    return <button className={className}>{children}</button>
+}
+
+function WarningButton({children}) {
+    return <Button type="warning">{children}</Button>
+}
+
+function ColumnTwoRow({left, right}) {
+    return <div className="row">
+        <div className="col-lg-6 col-md-6 col-sm-12">
+            {left}
+        </div>
+        <div className="col-lg-6 col-md-6 col-sm-12">
+            {right}
+        </div>
+    </div>
+}
+
 // composant assembleur
 function MyHomePage() {
     return <React.Fragment>
@@ -374,7 +571,8 @@ function MyHomePage() {
 
             <br />
             <h3>Gestion des formulaires avec react</h3>
-            <FormulaireTest1 />
+            {/* <FormulaireTest1 /> */}
+            <FormulaireTest2 />
 
         </div>
     </React.Fragment>
