@@ -15,6 +15,13 @@
     <!-- resources react - end -->
 
     <script src="app.js" defer type="text/babel"></script>
+
+    <script>
+        function tempsAttente(t) {
+            const start = Date.now();
+            while((Date.now() - start) < t) {}
+        }
+    </script>
 </head>
 <body>
     <div id="app"></div>

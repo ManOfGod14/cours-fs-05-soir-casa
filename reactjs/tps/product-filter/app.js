@@ -26,11 +26,15 @@ function ProductRow({product}) {
         productPrice = <span className="text-danger">{product.price}</span>
     }
 
+    // tempsAttente(500)
+
+    console.log('render')
     return <tr>
         <td>{productName}</td>
         <td>{productPrice}</td>
     </tr>
 }
+const PureProductRow = React.memo(ProductRow)
 
 // composant pour lister les produits
 function ProductTableList({products, filterText, inStock}) {
@@ -55,7 +59,8 @@ function ProductTableList({products, filterText, inStock}) {
             />)
         }
 
-        tabs.push(<ProductRow 
+        // ProductRow : ancien composant
+        tabs.push(<PureProductRow 
             key={'prod_'+productIndex}
             product={productItem}
         />)
@@ -125,6 +130,7 @@ class FilterBar extends React.Component {
 
 // composant de filtre
 class FilterableProductTable extends React.Component {
+// class FilterableProductTable extends React.PureComponent {
     constructor(props) {
         super(props)
         this.state = {
@@ -190,3 +196,26 @@ function ViewPage({products}) {
 
 const root = ReactDOM.createRoot(document.querySelector('#app'))
 root.render(<ViewPage products={PRODUCTS} />)
+
+const PRODUCTS2 = [
+    {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+    {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+    {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+    {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+    {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+    {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"},
+    {category: "Farine", price: "MAD6.5", stocked: true, name: "Smida"},
+    {category: "Farine", price: "MAD5.0", stocked: true, name: "Force mzian"}
+];
+// window.setTimeout(() => {
+//     root.render(<ViewPage products={PRODUCTS2} />)
+// }, 2000)
+
+const PRODUCTS3 = [...PRODUCTS,
+    {category: "Farine", price: "MAD6.5", stocked: true, name: "Smida"},
+    {category: "Farine", price: "MAD5.0", stocked: true, name: "Force mzian"}
+];
+
+window.setTimeout(() => {
+    root.render(<ViewPage products={PRODUCTS3} />)
+}, 2000)

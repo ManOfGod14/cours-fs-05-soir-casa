@@ -1,0 +1,16 @@
+body {
+    background-color: #000;
+}
+
+h1, h4 {
+    color: #FFF;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h4 {
+    font-size: 1.6em;
+}

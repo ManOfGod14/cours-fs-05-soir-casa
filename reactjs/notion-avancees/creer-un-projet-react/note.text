@@ -1,0 +1,23 @@
+Pour créer un nouveau projet react il faut taper la commande suivante :
+- cd ../ (pour retour en arrière d'un pas) 
+- ls (pour afficher l'arborescence de mon dossier courant)
+- cd creer-un-projet-react (pour accéder au dossier creer-un-projet-react)
+- npx create-react-app my-first-react-app
+- npx create-react-app ./
+- OR
+- yarn create react-app my-first-react-app
+- yarn create react-app ./
+-
+Après création du nouveau projet il faut accéder au dossier du projet
+- cd my-first-react-app
+- npm start
+- OR
+- yarn start
+-
+pour mettre le projet en production (en ligne) il faut :
+- npm run build
+- OR
+- yarn build
+-
+-
+

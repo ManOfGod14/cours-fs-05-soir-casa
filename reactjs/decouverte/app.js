@@ -545,7 +545,100 @@ function ColumnTwoRow({left, right}) {
     </div>
 }
 
-// composant assembleur
+/**
+ * Les composants pur
+ */
+
+// composant pur fonctionnelle
+function ComposantFn1() {
+    return <div>
+        <h3>Composant pur fonctionnelle</h3>
+    </div>
+}
+const PureComposantFn1 = React.memo(ComposantFn1)
+
+// composant pur de classe
+class PureComponsantClass extends React.PureComponent {
+    render() {
+        return <div>
+            <h3>Composant pur de classe</h3>
+        </div>
+    }
+}
+
+/**
+ * Les refs et DOM
+ * On utilise les refs qu'en deux cas de situations :
+ * 1 - Lorsqu'on est en face des champs non controlés
+ * 2 - Lorsqu'on a besoin d'utiliser les éléments externes à React (ex: librairie jQuery)
+ */
+class ComposantRef extends React.Component {
+    constructor(props) {
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+
+        // this.inputElt = null;
+        this.inputElt = React.createRef();
+    }
+
+    handleClick(e) {
+        // console.log(this.inputElt)
+        console.log(this.inputElt.current.value)
+    }
+
+    render() {
+        return <React.Fragment>
+            {/* <div className="form-group mb-3">
+                <label htmlFor="test">Champ test</label>
+                <input type="text" id="test"
+                    className="form-control" 
+                    // ref={(elt) => this.inputElt = elt}
+                    ref={this.inputElt}
+                />
+            </div> */}
+
+            {/* montage du composant FieldRef1 */}
+            {/* <FieldRef1 label={"Champ test"} ref={this.inputElt} /> */}
+
+            <FieldRef2Forwrad forwardRef={this.inputElt} label="Champ test2" />
+
+            <button className="btn btn-primary btn-sm" 
+                onClick={this.handleClick}
+            >
+                Get field value
+            </button>
+        </React.Fragment>
+    }
+}
+
+// composant fonctionnelle qui doit recevoir une ref
+const FieldRef1 = React.forwardRef(function(props, ref) {
+    return <div className="form-group mb-3">
+        <label htmlFor="test">{props.label}</label>
+        <input type="text" id="test"
+            className="form-control" 
+            ref={ref}
+        />
+    </div>
+});
+
+// composant de class qui doit recevoir une ref
+class FieldRef2 extends React.Component {
+    render() {
+        return <div className="form-group mb-3">
+            <label htmlFor="test">{this.props.label}</label>
+            <input type="text" id="test"
+                className="form-control" 
+                ref={this.props.forwardRef}
+            />
+        </div>
+    }
+}
+const FieldRef2Forwrad = React.forwardRef((props, ref) => {
+    return <FieldRef2 forwardRef={ref} {...props} />
+})
+
+// composant assembleur : montange
 function MyHomePage() {
     return <React.Fragment>
         <div className={"container py-5"}>
@@ -574,6 +667,14 @@ function MyHomePage() {
             {/* <FormulaireTest1 /> */}
             <FormulaireTest2 />
 
+            <br />
+            <h3>Les composants pur</h3>
+            <PureComposantFn1 />
+            <PureComponsantClass />
+
+            <br />
+            <h3>Les refs et DOM</h3>
+            <ComposantRef />
         </div>
     </React.Fragment>
 }
