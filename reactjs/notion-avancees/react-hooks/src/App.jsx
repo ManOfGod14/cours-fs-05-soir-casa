@@ -23,6 +23,16 @@ import {
   CustomCompteur1, 
   TodoListUnsingAjax 
 } from './app/CustomHooks';
+import { 
+  GetPublicLogo192, 
+  GetPublicLogo512 
+} from './app/VariableEnv';
+import { 
+  NotificationSimple1, 
+  NotificationSimple2,
+  NotificationPersonnalisee 
+} from './app/NotifMessages';
+import { PerformanceUseMemo } from './app/Performances';
 
 function App() {
   return (
@@ -54,7 +64,18 @@ function App() {
         </Col>
 
         <Col>
+          <h2 className='py-2'>Utilisation des variables d'environnements dans react</h2>
+          <GetPublicLogo192 />
+          <GetPublicLogo512 />
+
+          <h2 className='py-2'>Utilisation de react toastify (Message de notification)</h2>
+          <NotificationSimple1 />
+          <NotificationSimple2 />
+          <NotificationPersonnalisee />
+
           <h2 className='py-2'>Les hooks useMemo et useCallback</h2>
+          <PerformanceUseMemo />
+          
         </Col>
       </Row>
     </Container>

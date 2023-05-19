@@ -58,10 +58,10 @@ export function TodoListUnsingAjax() {
     useEffect(() => {
         (async () => {
             const response = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
-            console.log(response)
+            // console.log(response)
 
             const data = await response.json()
-            console.log(data)
+            // console.log(data)
 
             if(response.ok) {
                 setTodos(data)
@@ -100,7 +100,7 @@ export function TodoListUnsingAjax() {
 
 
 export function CommentList() {
-    const [loading, comments] = useFetchAjax("https://jsonplaceholder.typicode.com/comments?_limit=10")
+    const [loading, comments] = useFetchAjax("https://jsonplaceholder.typicode.com/comments?_limit=5")
     
     if(loading) {
         return <p className='mt-3'>
