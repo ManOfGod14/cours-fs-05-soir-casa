@@ -1,0 +1,64 @@
+
+********************************************************************************************
+*** launch project (clone and start this project)
+********************************************************************************************
+### step 1 : Project requirements
+- node -v (if dont exist install her)
+- npm -v (if dont exist install her)
+- yarn -v (if dont exist install her)
+-
+-
+
+### step 2 : Clone project
+- clone 
+-
+-
+
+### step 3 : Create in project root .env file
+put in this file  :
+
+PORT=3010
+
+### step 4 : Install the project dependencies.
+- yarn install OR npm install
+- 
+- 
+
+### step 5 : start developement server or build for production
+- yarn start
+-
+- yarn build
+-
+
+
+
+********************************************************************************************
+*** create this project
+********************************************************************************************
+### create react app
+- yarn create react-app chronometer-react
+-
+
+### install react-bootstrap and bootstrap
+- yarn add react-bootstrap bootstrap
+- yarn add bootstrap-icons
+-
+
+### install material ui
+- yarn @mui/material @emotion/react @emotion/styled
+-
+
+### install material icons
+- yarn add @mui/icons-material
+-
+
+### start developement server or build for production
+- yarn start
+-
+- yarn build
+-
+
+********************************************************************************************
+***
+********************************************************************************************
+

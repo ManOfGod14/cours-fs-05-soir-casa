@@ -32,7 +32,7 @@ import {
   NotificationSimple2,
   NotificationPersonnalisee 
 } from './app/NotifMessages';
-import { PerformanceUseMemo } from './app/Performances';
+import { CompteurDecompteurUseRecuder, CompteurDecompteurUseState, PerformanceUseCallback, PerformanceUseLayoutEffect, PerformanceUseMemo, PerformanceUseRef } from './app/Performances';
 
 function App() {
   return (
@@ -75,7 +75,18 @@ function App() {
 
           <h2 className='py-2'>Les hooks useMemo et useCallback</h2>
           <PerformanceUseMemo />
+          <PerformanceUseCallback />
+
+          <h2 className='py-2'>Le hook useRef</h2>
+          <PerformanceUseRef />
           
+          <h2 className='py-2'>Le hook useLayoutEffect</h2>
+          <PerformanceUseLayoutEffect />
+          
+          <h2 className='py-2'>Le hook useReducer vs useState</h2>
+          <CompteurDecompteurUseState />
+          <CompteurDecompteurUseRecuder />
+
         </Col>
       </Row>
     </Container>

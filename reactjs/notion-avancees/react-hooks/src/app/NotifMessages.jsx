@@ -48,6 +48,7 @@ export function NotificationSimple2() {
     </>
 }
 
+// notification personnalisée
 export function NotificationPersonnalisee() {
     const notif = () => {
         notifyToTopRight('success', "Reussi : Utilisateur enregistré avec succès !")
