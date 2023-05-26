@@ -1,0 +1,10 @@
+### react routing
+
+[créer una application react]
+- npx create-react-app react-routing
+
+[installer les dépendances react-bootstrap et bootstrap]
+- npm install react-bootstrap bootstrap
+
+[installer la dépendance react-router-dom]
+- npm install react-router-dom
