@@ -4,6 +4,7 @@ import {
     NavDropdown, 
     Navbar
 } from 'react-bootstrap';
+
 import { Link } from 'react-router-dom';
 
 export function MyNavbar() {
@@ -19,6 +20,7 @@ export function MyNavbar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
+
                         <Link to="/about" className="nav-link">About</Link>
 
                         <NavDropdown title="Services" id="basic-nav-dropdown">

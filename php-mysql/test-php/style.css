@@ -1,0 +1,41 @@
+*{
+    margin: 0 10px;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    background-color: #000;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul {
+    display: flex;
+    flex-flow: nowrap;
+    list-style-type: none;
+}
+
+nav li {
+    flex: 1 1 block;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 3px solid transparent;
+    margin: 10px;
+}
+
+div > hr {
+    margin: 5px 0;
+    background-color: red;
+    border: 2px solid red;
+}
+
+footer {
+    text-align: center;
+    margin: 30px;
+}
