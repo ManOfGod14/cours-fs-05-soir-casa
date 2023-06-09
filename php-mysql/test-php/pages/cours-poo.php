@@ -117,6 +117,35 @@
         echo "<span>Password hasher/crypter : " . $admin->hashPassword($admin->getPassword()) . "</span><br />";
     ?>
 
+    <h2>Gestion des exceptions en PHP (try, throw, catch)</h2>
+    <form action="" method="post">
+        <label>Saisissez le numérateur :</label>
+        <input type="number" name="nbr1" required>
+
+        <br /><br />
+        <label>Saisissez le dénominateur :</label>
+        <input type="number" name="nbr2" required>
+
+        <br /><br />
+        <label>Cliquez sur boutton pour : </label>
+        <button type="submit">Effectuer la division</button>
+    </form>
+    <?php
+        require_once "../classes/division.php";
+    
+        $nume = $_POST['nbr1'];
+        $deno = $_POST['nbr2'];
+
+        $resDiv = "";
+        if(isset($_POST['nbr1']) && isset($_POST['nbr2'])) {
+            $division = new Division($nume, $deno);
+            $resDiv = $division->calculer();
+        }
+    ?>
+    <h5>
+        Résultat de la division <?php echo $nume." / ".$deno; ?> = <?php echo $resDiv; ?>
+    </h5>
+
     <?php include "../layouts/separator.php"; ?>
     <?php require_once "../layouts/footer.php"; ?>
 </body>
