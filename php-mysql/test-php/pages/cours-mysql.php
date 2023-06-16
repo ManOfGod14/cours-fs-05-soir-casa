@@ -248,11 +248,314 @@
                 DELETE FROM clients
                 WHERE id=1
             ");
-            $sqlDelClientId1->execute();
-
-            echo "Client supprimé avec succès!";
+            // $sqlDelClientId1->execute();
+            // echo "Client supprimé avec succès!";
         ?>
     </div>
+    
+    <div>
+        <h4>Sélection simple de données dans une table MySQL en PHP</h4>
+        <h5>Sélectionnez tous les éléments de table clients</h5>
+        <?php
+            $sqlSelectClients = $dbConnectPDO->prepare("
+                SELECT *
+                FROM clients
+            ");
+            $sqlSelectClients->execute();
+            $resClients = $sqlSelectClients->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients);
+            echo "</pre>";
+        ?>
+
+        <h5>Sélectionnez le nom, prenom de la table clients</h5>
+        <?php
+            $sqlSelectClients2 = $dbConnectPDO->prepare("
+                SELECT nom, prenom
+                FROM clients
+            ");
+            $sqlSelectClients2->execute();
+            $resClients2 = $sqlSelectClients2->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients2);
+            echo "</pre>";
+        ?>
+
+        <h5>Récupération des valeurs uniques (par colonne) dans une table</h5>
+        <?php
+            $sqlSelectClients3 = $dbConnectPDO->prepare("
+                SELECT DISTINCT prenom
+                FROM clients
+            ");
+            $sqlSelectClients3->execute();
+            $resClients3 = $sqlSelectClients3->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients3);
+            echo "</pre>";
+        ?>
+
+        <h5>Ordonner les valeurs récupérées dans une table</h5>
+        <?php
+            $sqlSelectClients4 = $dbConnectPDO->prepare("
+                SELECT nom, prenom
+                FROM clients
+                ORDER BY nom ASC, prenom DESC
+            ");
+            $sqlSelectClients4->execute();
+            $resClients4 = $sqlSelectClients4->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients4);
+            echo "</pre>";
+        ?>
+    </div>
+
+    <div>
+        <h4>Utilisation des critères de sélection pour sélectionner des données dans une table MySQL</h4>
+
+        <h5>La clause SQL WHERE (pour conditionner une requête)</h5>
+        <?php
+            $sqlSelectClients5 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom
+                FROM clients
+                WHERE nom = 'Baba'
+            ");
+            $sqlSelectClients5->execute();
+            $resClients5 = $sqlSelectClients5->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients5);
+            echo "</pre>";
+        ?>
+
+        <h5>Les opérateurs SQL AND, OR et NOT</h5>
+        <h6>AND</h6>
+        <?php
+            $sqlSelectClients6 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom, age
+                FROM clients
+                WHERE nom = 'Baba' AND age >= 18
+            ");
+            $sqlSelectClients6->execute();
+            $resClients6 = $sqlSelectClients6->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients6);
+            echo "</pre>";
+        ?>
+
+        <br/>
+        <h6>NOT</h6>
+        <?php
+            $sqlSelectClients6 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom, age
+                FROM clients
+                WHERE NOT nom = 'Baba'
+            ");
+            $sqlSelectClients6->execute();
+            $resClients6 = $sqlSelectClients6->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients6);
+            echo "</pre>";
+        ?>
+
+        <h5>La clause LIMIT</h5>
+        <?php
+            $sqlSelectClients7 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom
+                FROM clients
+                LIMIT 2 OFFSET 2
+            ");
+            $sqlSelectClients7->execute();
+            $resClients7 = $sqlSelectClients7->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients7);
+            echo "</pre>";
+        ?>
+
+        <h5>L'opérateur SQL LIKE (pour les recherches)</h5>
+        <?php
+            $sqlSelectClients8 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom
+                FROM clients
+                WHERE nom LIKE '%t%' OR prenom LIKE '%a%'
+            ");
+            $sqlSelectClients8->execute();
+            $resClients8 = $sqlSelectClients8->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients8);
+            echo "</pre>";
+        ?>
+
+        <h5>Les opérateurs IN et BETWEEN</h5>
+        <h6>IN</h6>
+        <?php
+            $sqlSelectClients9 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom, age
+                FROM clients
+                WHERE age IN (18, 19, 25)
+            ");
+            $sqlSelectClients9->execute();
+            $resClients9 = $sqlSelectClients9->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients9);
+            echo "</pre>";
+        ?>
+        <h6>BETWEEN</h6>
+        <?php
+            $sqlSelectClients9 = $dbConnectPDO->prepare("
+                SELECT id, nom, prenom, age
+                FROM clients
+                WHERE age BETWEEN 18 AND 30
+            ");
+            $sqlSelectClients9->execute();
+            $resClients9 = $sqlSelectClients9->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients9);
+            echo "</pre>";
+        ?>
+    </div>
+
+    <div>
+        <h4>Utilisation des fonctions d'agrégations et scalaires en SQL</h4>
+        <h5>Les fonctions min, max, count, avg, sum, length, round et now</h5>
+        <h6>MIN</h6>
+        <?php
+            $sqlSelectClients10 = $dbConnectPDO->prepare("
+                SELECT MIN(age) AS minAge
+                FROM clients
+            ");
+            $sqlSelectClients10->execute();
+            $resClients10 = $sqlSelectClients10->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients10);
+            echo "</pre>";
+        ?>
+        <h6>MAX</h6>
+        <?php
+            $sqlSelectClients11 = $dbConnectPDO->prepare("
+                SELECT MAX(age) AS maxAge
+                FROM clients
+            ");
+            $sqlSelectClients11->execute();
+            $resClients11 = $sqlSelectClients11->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients11);
+            echo "</pre>";
+        ?>
+        <h6>COUNT</h6>
+        <?php
+            $sqlSelectClients12 = $dbConnectPDO->prepare("
+                SELECT COUNT(id) AS nbrClient
+                FROM clients
+                WHERE age >= 18
+            ");
+            $sqlSelectClients12->execute();
+            $resClients12 = $sqlSelectClients12->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients12);
+            echo "</pre>";
+        ?>
+        <h6>AVG/ROUND</h6>
+        <?php
+            $sqlSelectClients13 = $dbConnectPDO->prepare("
+                SELECT ROUND(AVG(age), 2) AS moyenneAge
+                FROM clients
+            ");
+            $sqlSelectClients13->execute();
+            $resClients13 = $sqlSelectClients13->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients13);
+            echo "</pre>";
+        ?>
+        <h6>SUM</h6>
+        <?php
+            $sqlSelectClients14 = $dbConnectPDO->prepare("
+                SELECT SUM(age) AS sommeAge
+                FROM clients
+            ");
+            $sqlSelectClients14->execute();
+            $resClients14 = $sqlSelectClients14->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients14);
+            echo "</pre>";
+        ?>
+        <h6>NOW : </h6>
+        <?php
+            $sqlSelectClients15 = $dbConnectPDO->prepare("
+                SELECT nom, prenom, NOW() AS dateHeure
+                FROM clients
+            ");
+            $sqlSelectClients15->execute();
+            $resClients15 = $sqlSelectClients15->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients15);
+            echo "</pre>";
+        ?>
+        <h6>LENGTH : </h6>
+        <?php
+            $sqlSelectClients16 = $dbConnectPDO->prepare("
+                SELECT nom, LENGTH(nom) AS tailleN, prenom, LENGTH(prenom) AS tailleP
+                FROM clients
+            ");
+            $sqlSelectClients16->execute();
+            $resClients16 = $sqlSelectClients16->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients16);
+            echo "</pre>";
+        ?>
+
+        <h5>L'instruction GROUP BY</h5>
+        <?php
+            $sqlSelectClients17 = $dbConnectPDO->prepare("
+                SELECT COUNT(id) AS nbrClient, age
+                FROM clients
+                GROUP BY age
+            ");
+            $sqlSelectClients17->execute();
+            $resClients17 = $sqlSelectClients17->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients17);
+            echo "</pre>";
+        ?>
+
+        <h5>La clause SQL HAVING</h5>
+        <?php
+            $sqlSelectClients18 = $dbConnectPDO->prepare("
+                SELECT COUNT(id) AS nbrClient, age
+                FROM clients
+                GROUP BY age
+                HAVING COUNT(id) < 2
+            ");
+            $sqlSelectClients18->execute();
+            $resClients18 = $sqlSelectClients18->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<pre>";
+                print_r($resClients18);
+            echo "</pre>";
+        ?>
+    </div>
+
+    <?php 
+        // fermer la connexion à la base de données
+        $dbConnectPDO = NULL; 
+    ?>
 
     <?php include "../layouts/separator.php"; ?>
     <?php require_once "../layouts/footer.php"; ?>

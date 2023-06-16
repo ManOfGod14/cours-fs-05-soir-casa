@@ -1,0 +1,55 @@
+## créer un nouveau projet laravel version 9.0
+> composer create-project laravel/laravel:^9.0 shop-laravel
+
+## lancer le serveur de développement
+> cd shop-laravel
+> php artisan serve
+
+**********************************
+
+## créer un model simple dans laravel
+> php artisan make:model Product
+
+## créer une nouvelle migration dans laravel
+> php artisan make:migration create_products_table
+
+## créer un nouveau controlleur sans les ressources dans laravel
+> php artisan make:controller ProductController
+
+## créer un nouveau controlleur avec les ressources dans laravel
+> php artisan make:controller ProductController -r
+
+## créer un nouveau controlleur avec les ressources dans laravel, dans un dossier enfant du dossier Controllers
+> php artisan make:controller Front/ProductController -r
+
+**********************************
+
+## créer un model avec sa migration dans laravel
+> php artisan make:model Product -m
+
+## créer un model avec sa migration dans laravel, dans un dossier enfant du dossier Models
+> php artisan make:model Backend/Product -m
+
+## créer un model avec sa migration, son controller et ses ressources dans laravel
+> php artisan make:model Product -mcr
+
+**********************************
+## table countries
+> php artisan make:model Country -mcr
+
+## table contact_forms
+> php artisan make:model ContactForm -mcr
+
+**********************************
+## Pour faire la migration de toute les tables vers la base de données
+> php artisan migrate
+
+
+**********************************
+## les seeders : nous permet de pré-insérer des données dans les tables
+# création des seeds
+> php artisan make:seeder ProductSeeder
+> php artisan make:seeder CountrySeeder
+
+# lancement des seeds pour insérer les données
+> php artisan db:seed
