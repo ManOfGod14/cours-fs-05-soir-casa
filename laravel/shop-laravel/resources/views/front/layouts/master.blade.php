@@ -7,6 +7,8 @@
     <meta name="author" content="" />
     <title>@yield('title', "Master Page")</title>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}" />
     

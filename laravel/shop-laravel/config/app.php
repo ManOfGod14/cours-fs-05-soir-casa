@@ -192,6 +192,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
+        'CommonHelper' => App\Helpers\CommonHelper::class,
+        'JsonHelper' => App\Helpers\JsonHelper::class,
     ])->toArray(),
 
 ];

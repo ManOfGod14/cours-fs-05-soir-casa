@@ -47,12 +47,32 @@
                 </li>
             </ul>
 
-            <form class="d-flex">
-                <button class="btn btn-outline-primary" type="submit">
-                    <i class="bi-cart-fill me-1"></i> Mon panier
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>
+            <div class="d-flex">
+                @if (Auth::guard('web')->user())
+                    <a href="{{ route('front.user.profile') }}" class="btn btn-secondary btn-sm me-2">
+                       {{ Auth::guard('web')->user()->name }}
+                    </a>
+
+                    <a href="{{ route('front.auth.logout') }}" class="btn btn-danger btn-sm me-2">
+                        Déconnexion
+                    </a>
+                @else
+                    <a href="{{ route('front.auth.login.form') }}" class="btn btn-success btn-sm me-2">
+                        Connexion
+                    </a>
+
+                    <a href="{{ route('front.auth.signup.form') }}" class="btn btn-primary btn-sm me-2">
+                        Inscription
+                    </a>
+                @endif
+
+                <form>
+                    <button class="btn btn-outline-primary" type="submit">
+                        <i class="bi-cart-fill me-1"></i> Mon panier
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </nav>

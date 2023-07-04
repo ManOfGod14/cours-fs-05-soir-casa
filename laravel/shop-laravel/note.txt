@@ -53,3 +53,49 @@
 
 # lancement des seeds pour insérer les données
 > php artisan db:seed
+
+# Vider tous les caches dans laravel
+$ php artisan optimize:clear
+$
+$ php artisan config:clear
+$ php artisan clear-compiled
+$ php artisan config:cache
+$
+
+# Recharger tous les packages dans laravel
+$ composer dump-autoload
+$
+
+# installer les notifications par mail
+$ php artisan make:mail MailNotifs
+$
+
+**********************************
+Inscription / Authentification
+**********************************
+# 1ère méthode
+$ php artisan make:controller Auth/ConnexionController
+$ php artisan make:controller Auth/InscriptionController
+$
+
+# 2ème méthode
+$ php artisan make:controller Auth/AuthUserController
+$
+
+# le controller du profil utilisateur
+$ php artisan make:controller Auth/UserProfileController
+$
+
+*******************************************************
+******** API avec sanctum
+*******************************************************
+# controller api authentification
+$ php artisan make:controller Auth/ApiAuthUserController
+$
+
+
+*******************
+@include('front.layouts.header') équivaut à <?php include('front.layouts.header') ?>
+## {{ }} équivaut à <?php echo ?>
+
+
