@@ -117,7 +117,7 @@ export function PerformanceUseRef() {
 
     return <>
         <div className="mb-3">
-            <p className="text-white mt-3">1 - useRef : peut etre utilisé pour récupérer la référence d'un élément dans le DOM et permet aussi de stocker une valeurqui n'est pas nécessaire pour le rendu</p>
+            <p className="text-white mt-3">1 - useRef : peut etre utilisé pour récupérer la référence d'un élément dans le DOM et permet aussi de stocker une valeur qui n'est pas nécessaire pour le rendu</p>
             <input type="text" 
                 className="form-control"
                 ref={inputElt}
